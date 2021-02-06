@@ -3,17 +3,22 @@
     margin: 0;
     list-style: none;
     box-sizing: border-box;
+    text-decoration: none;
+    color: white;
 }
 
-/*|| Header */
+body{
+    background-color: black;
+}
+
+/*||Header*/
 .header{
+    font-size: 18px;
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1% 2%;
-    background-color: black;
-    border-bottom: blueviolet 1px solid;
-    color: white;
+    border-bottom:1px solid blueviolet;
+    text-align: center;
     z-index: 1;
 }
 
@@ -23,102 +28,97 @@
     align-items: center;
 }
 
-.header a{
-    padding:1%;
-    margin: 0 0.2%;
-    text-decoration: none;
-    color: white;
+.header li:not(:nth-child(3)){
+    width: 9.3%;
+    padding: 1%;
 }
-
-.header a:hover{
-    background-color: blueviolet;
-    cursor: pointer;
-}
-
-.header a:focus{
-    background-color: blueviolet;
-}
-
-
 
 .header li:nth-child(3){
     font-size: 1.5em;
     color: blueviolet;
-    margin: 0 1em;
 }
 
-/*||Grid container*/
-.main-div{
+.header a{
+    padding: 10%;
+}
+
+.header a:hover{
+cursor: pointer;
+background-color: blueviolet;
+}
+
+/*|| Main Body*/
+.main-body{
     position: relative;
-    top: 3.3em;
-    display: grid;
-    grid-template-rows: 92vh;
-    grid-template-columns: repeat(4,100%);
-    background-color: greenyellow;
+    top: 3em;
+    height: 92.8vh;
+    width: 100%;
+    display: flex;
 }
 
-/*||Grid Items*/
-
-/*======Home=====*/
+/*||Home */
 .home{
-    background-color: black;
-    grid-row: 1/2;
-    grid-column: 1/2;
     width: 100%;
-    color: white;
-    display: none;
+    padding: 0 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
 }
 
 .home ul{
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    text-align: center;
 }
 
 .home li:first-child{
-    text-align: center;
-    margin-top: 5%;
+    position: relative;
+    top: 3em;
 }
 
-.home li:first-child p:first-child{
-    font-size: 3em;
-}
-
-
-/*||About -Me */
-
+/*|| About Me*/
 .about-me{
-    background-color: black;
-    grid-row: 1/2;
-    grid-column: 1/2;
     width: 100%;
-    color: white;
+    padding: 0 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
 }
 
 .about-me ul{
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
-.about-me li:nth-child(2){
-    padding: 3em 3em;
-}
-
-.about-me img{
+.about-me li:first-child img{
     transform: rotateY(180deg);
 }
 
-.projects{
-    background-color: yellow;
-    grid-row: 1/2;
-    grid-column: 3/4;
-    width: 100%;
+.about-me li:last-child{
+    position: relative;
+    top: 3em;
+}
+
+.active{
+    background-color: blueviolet;
+}
+
+.hidden{
     display: none;
 }
 
-.contact{
-    background-color: blueviolet;
-    grid-row: 1/2;
-    grid-column: 4/5;
-    width: 100%;
-    display: none;
-}
+
+
+
+
+
+
+
+
+
