@@ -47,6 +47,50 @@ cursor: pointer;
 background-color: blueviolet;
 }
 
+/*||Header-Mobile*/
+.header-mobile{
+    font-size: 18px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom:1px solid blueviolet;
+    text-align: center;
+    z-index: 1;
+    display: none;
+    padding: 1% 2%;
+}
+
+.header-mobile ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#mobile-dropdown{
+    width: 25%;
+    position: fixed;
+    display: none;
+    border: 1px solid gray;
+    right: 10px;
+    background-color: blueviolet;
+}
+
+#mobile-dropdown li:not(:last-child){
+    border-bottom: 1px solid gray;
+    font-size: 1em;
+}
+
+.header-mobile li:first-child{
+    font-size: 2em;
+    font-weight: bold;
+    color: blueviolet;
+}
+
+.header-mobile li:last-child img{
+    width: 30px;
+}
+
 /*|| Main Body*/
 .main-body{
     position: relative;
@@ -70,13 +114,13 @@ background-color: blueviolet;
 .home ul{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
 }
 
 .home li:first-child{
     position: relative;
-    top: 3em;
+    top: 0em;
 }
 
 /*|| About Me*/
@@ -93,7 +137,7 @@ background-color: blueviolet;
 .about-me ul{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .about-me li:first-child img{
@@ -102,7 +146,8 @@ background-color: blueviolet;
 
 .about-me li:last-child{
     position: relative;
-    top: 3em;
+    top: 0em;
+    width: 30%;
 }
 
 .active{
@@ -111,6 +156,48 @@ background-color: blueviolet;
 
 .hidden{
     display: none;
+}
+
+
+@media only screen and (max-width: 600px){
+    .header-mobile{
+        display: block;
+    }
+
+    .header{
+        display: none;
+    }
+
+    .home ul{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .home li:first-child{
+        font-size: 0.8em;
+    }
+
+    .about-me ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .about-me li{
+        border: 1px solid green;
+    }
+
+    .about-me li:last-child{
+        width: 60%;
+        align-self: flex-start;
+        font-size: 0.8em;
+    }
+    
+
+    
+
 }
 
 

@@ -1,13 +1,12 @@
 'use strict'
 let header_links=document.getElementsByClassName("header-nav");
+let mobile_menu= document.getElementById('mobile-menu')
 let prevActiveDiv=""
 for(let i=0;i<header_links.length;i++){
     header_links[i].onclick=selectLink
-    //let divName=header_links[i].href.split('#')[1];
-    //console.log(divName)
-    
-
 }
+
+mobile_menu.onclick=showMobileMenu
 
 
 function selectLink(event){
@@ -35,6 +34,11 @@ function hideGrid(curDiv,prevDiv){
     {activeDiv.classList.remove('hidden')}
     if(typeof inactiveDiv!=='undefined')
     {inactiveDiv.classList.add('hidden')}
-    //console.log(activeDiv.id);
+}
+
+function showMobileMenu(){
+    let mobile_dropdown=document.getElementById('mobile-dropdown');
+    console.log(mobile_dropdown.style.display)
+    mobile_dropdown.style.display==='block'?mobile_dropdown.style.display='none':mobile_dropdown.style.display='block'
 }
 
