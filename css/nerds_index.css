@@ -79,6 +79,7 @@ background-color: blueviolet;
 #mobile-dropdown li:not(:last-child){
     border-bottom: 1px solid gray;
     font-size: 1em;
+    font-weight: normal;
 }
 
 .header-mobile li:first-child{
@@ -183,10 +184,6 @@ background-color: blueviolet;
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .about-me li{
-        border: 1px solid green;
     }
 
     .about-me li:last-child{

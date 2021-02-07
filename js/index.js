@@ -13,7 +13,6 @@ function selectLink(event){
     changeColorOnClick(event)
     
     let curDiv=event.target.href.split('#')[1]
-    //console.log(prevActiveDiv, curDiv)
     hideGrid(curDiv,prevActiveDiv)
 
 }
@@ -30,10 +29,15 @@ function hideGrid(curDiv,prevDiv){
     let activeDiv=document.getElementsByClassName(curDiv)[0];
     let inactiveDiv=document.getElementsByClassName(prevDiv)[0]
     console.log(activeDiv!=='undefined',inactiveDiv!=='undefined')
-    if(typeof activeDiv!=='undefined')
-    {activeDiv.classList.remove('hidden')}
-    if(typeof inactiveDiv!=='undefined')
-    {inactiveDiv.classList.add('hidden')}
+    
+    if(curDiv!=prevDiv){
+        if(typeof activeDiv!=='undefined')
+        {activeDiv.classList.remove('hidden')}
+        if(typeof inactiveDiv!=='undefined')
+        {inactiveDiv.classList.add('hidden')}
+    }
+    showMobileMenu()
+    
 }
 
 function showMobileMenu(){
