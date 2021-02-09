@@ -17,7 +17,7 @@
         <li><a href="#about-me" class="header-nav">About Me</a></li>
         <li>Dr*. 9Rains</li>
         <li><a class="header-nav">Projects</a></li>
-        <li><a class="header-nav">Contact</a></li>
+        <li><a href="#contact" class="header-nav">Contact</a></li>
     </ul>
 
 </div>
@@ -31,7 +31,7 @@
                 <li><a href="#home"class="header-nav active">Home</a></li>
                 <li><a href="#about-me" class="header-nav">About Me</a></li>
                 <li><a class="header-nav">Projects</a></li>
-                <li><a class="header-nav">Contact</a></li>
+                <li><a href="#contact" class="header-nav">Contact</a></li>
             </ul>
         </li>
     </ul>
@@ -39,7 +39,7 @@
 </div>
 <div class="main-body">
 
-    <div class="home" id="home">
+    <div class="home menu-divs" id="home">
         <ul>
             <li>
                 <h1>Hi, I Am Kwame</h1>
@@ -50,7 +50,7 @@
         </ul>
     </div>
 
-    <div class="about-me hidden" id="about-me">
+    <div class="about-me hidden menu-divs" id="about-me">
         <ul>
             <li><img src="./images/my_img_cropped.png"></li>
             <li>
@@ -58,6 +58,32 @@
                 <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, culpa hic! Tempore error non hic in distinctio explicabo fugit placeat officiis facilis accusamus. Temporibus, sapiente ipsa placeat dignissimos tempora quia?</span></p>
             </li>
         </ul>
+    </div>
+
+    <!--Contact-->
+    <div class="contact hidden menu-divs" id="contact">
+        <h1>Contact</h1>
+
+        <div class="contact-container">
+            <ul>
+                <li><img src="./images/gm.png">bohuluinjapan@gmail.com</li>
+                <li><img src="./images/insta-removebg-preview.png">dr.9rains</li>
+                <li><img src="./images/fb3-removebg-preview.png">K.A.Bohulu</li>
+                <li><img src="./images/link3.png">kwame-bohulu-8b63b953</li>
+            </ul>
+
+            <form action="">
+                <label for="query_name">Name</label>
+                <input type="text" id="query_name">
+                <label for="query_email">Email</label>
+                <input type="text" id="query_email">
+                <label for="query_msg">Message</label>
+                <textarea name="" id="query_msg" cols="30" rows="5"></textarea>
+                <input type="submit" value="Send">
+            </form>
+    
+        </div>
+
     </div>
 
 </div>
