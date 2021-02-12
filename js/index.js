@@ -1,9 +1,14 @@
 
 let header_links=document.getElementsByClassName("header-nav");
 let mobile_menu= document.getElementById('mobile-menu')
+let project_menu= document.getElementsByClassName("proj_nav")
 let prevActiveDiv=""
 for(let i=0;i<header_links.length;i++){
     header_links[i].onclick=selectLink
+}
+
+for(let i=0;i<project_menu.length;i++){
+    project_menu[i].onclick=selectLinkProjs
 }
 
 mobile_menu.onclick=showMobileMenu
@@ -13,8 +18,17 @@ function selectLink(event){
     changeColorOnClick(event)
     
     let curDiv=event.target.href.split('#')[1]
-    console.log(event.target.href)
-    hideGrid(curDiv)
+    console.log(curDiv)
+    hideGrid(curDiv,'menu-divs')
+
+}
+
+function selectLinkProjs(event){
+    changeColorOnClickProj(event)
+    
+    let curDiv=event.target.href.split('#')[1]
+    //console.log(curDiv)
+    hideGridProjs(curDiv,'projects-content')
 
 }
 
@@ -26,24 +40,37 @@ function changeColorOnClick(event){
 
 }
 
-function hideGrid(curDiv){
+function changeColorOnClickProj(event){
+    let prevActive=document.getElementsByClassName('active-proj');
+    prevActiveDiv=prevActive[0].href.split('#')[1];
+    prevActive[0].classList.remove('active-proj')
+    event.target.classList.add('active-proj')
+
+}
+
+function hideGrid(curDiv, divClass){
     console.log(curDiv)
     let activeDiv=document.getElementsByClassName(curDiv)[0];
 
-    let inactiveDiv=document.getElementsByClassName('menu-divs')
+    let inactiveDiv=document.getElementsByClassName(divClass)
     for(var i=0;i<inactiveDiv.length;i++){
         inactiveDiv[i].classList.add('hidden')
     }
     activeDiv.classList.remove('hidden')
-    /*console.log(activeDiv!=='undefined',inactiveDiv!=='undefined')
-    
-    if(curDiv!=prevDiv){
-        if(typeof activeDiv!=='undefined')
-        {activeDiv.classList.remove('hidden')}
-        if(typeof inactiveDiv!=='undefined')
-        {inactiveDiv.classList.add('hidden')}
-    }*/
     showMobileMenu()
+    
+}
+
+function hideGridProjs(curDiv, divClass){
+    console.log(curDiv)
+    let activeDiv=document.getElementsByClassName(curDiv)[0];
+
+    let inactiveDiv=document.getElementsByClassName(divClass)
+    for(var i=0;i<inactiveDiv.length;i++){
+        inactiveDiv[i].classList.add('hidden')
+        console.log(inactiveDiv[i].className)
+    }
+    activeDiv.classList.remove('hidden')
     
 }
 

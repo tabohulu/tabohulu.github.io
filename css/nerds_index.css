@@ -177,9 +177,9 @@ width: 100%;
     padding: 10% 10%;
 }
 
-.mini-nav li:nth-child(1) :nth-child(1){
+/*.mini-nav li:nth-child(1) :nth-child(1){
     background-color: blueviolet;
-}
+}*/
 
 .projects-content{
     display: flex;
@@ -266,6 +266,10 @@ textarea{
 
 
 .active{
+    background-color: blueviolet;
+}
+
+.active-proj{
     background-color: blueviolet;
 }
 
