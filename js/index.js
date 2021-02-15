@@ -17,7 +17,12 @@ mobile_menu.onclick=showMobileMenu
 function selectLink(event){
     changeColorOnClick(event)
     
-    let curDiv=event.target.href.split('#')[1]
+    let curDiv=event.target.innerText.toString().toLowerCase()
+    if (curDiv.indexOf(" ")!==-1){
+        curDiv=curDiv.split(' ')[0]+'-'+curDiv.split(' ')[1]
+        
+
+    }
     console.log(curDiv)
     hideGrid(curDiv,'menu-divs')
 
@@ -26,7 +31,12 @@ function selectLink(event){
 function selectLinkProjs(event){
     changeColorOnClickProj(event)
     
-    let curDiv=event.target.href.split('#')[1]
+    let curDiv=event.target.innerText.toString().toLowerCase()
+    if (curDiv.indexOf(" ")!==-1){
+        curDiv=curDiv.split(' ')[0]+'-'+curDiv.split(' ')[1]
+        
+
+    }
     //console.log(curDiv)
     hideGridProjs(curDiv,'projects-content')
 
@@ -49,7 +59,6 @@ function changeColorOnClickProj(event){
 }
 
 function hideGrid(curDiv, divClass){
-    console.log(curDiv)
     let activeDiv=document.getElementsByClassName(curDiv)[0];
 
     let inactiveDiv=document.getElementsByClassName(divClass)
@@ -68,7 +77,6 @@ function hideGridProjs(curDiv, divClass){
     let inactiveDiv=document.getElementsByClassName(divClass)
     for(var i=0;i<inactiveDiv.length;i++){
         inactiveDiv[i].classList.add('hidden')
-        console.log(inactiveDiv[i].className)
     }
     activeDiv.classList.remove('hidden')
     
@@ -76,7 +84,7 @@ function hideGridProjs(curDiv, divClass){
 
 function showMobileMenu(){
     let mobile_dropdown=document.getElementById('mobile-dropdown');
-    console.log(mobile_dropdown.style.display)
+    //console.log(mobile_dropdown.style.display)
     mobile_dropdown.style.display==='block'?mobile_dropdown.style.display='none':mobile_dropdown.style.display='block'
 }
 

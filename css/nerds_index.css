@@ -149,7 +149,7 @@ background-color: blueviolet;
 .about-me li:last-child{
     position: relative;
     top: 0em;
-    width: 30%;
+    width: 40%;
 }
 /*|| Projects*/
 
@@ -182,6 +182,12 @@ align-items: center;
 .mini-nav a{
     padding: 10% 10%;
 }
+
+.mini-nav a:hover{
+    cursor: pointer;
+    background-color: blueviolet;
+}
+
 
 /*.mini-nav li:nth-child(1) :nth-child(1){
     background-color: blueviolet;
@@ -301,6 +307,7 @@ textarea{
         justify-content: center;
         text-align: center;
     }
+
     .home li:first-child{
         font-size: 0.8em;
     }
@@ -326,9 +333,6 @@ textarea{
     form{
         width: 100%;
     }
-        
-    
-   
 
     .projects-content img{
         width: 50%;
@@ -337,7 +341,6 @@ textarea{
     .projects-content section{
         width: 80%;
         margin-top: 20px;
-        border: 1px solid green;
     }
 
     .projects-content section h2{
@@ -349,11 +352,6 @@ textarea{
     .tech img{
         width: 4%;
     }
-   
-
-    
-    
-
 }
 
 @media only screen and (max-width: 700px){
@@ -368,11 +366,6 @@ textarea{
         width: 100%;
         margin-bottom: 1em;
     }
-
-    
-    
-
-    
 
 }
 
