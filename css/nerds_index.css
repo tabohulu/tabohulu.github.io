@@ -40,6 +40,7 @@ body{
 
 .header a{
     padding: 10%;
+    transition: background-color 0.3s ease-in;
 }
 
 .header a:hover{
@@ -119,6 +120,18 @@ background-color: blueviolet;
     text-align: center;
 }
 
+.home h1{
+    animation: fadeIn 1s ease-in 1s backwards;
+}
+
+.home p{
+    animation: fadeIn 1s ease-in 2s backwards ;
+}
+
+.home img{
+    animation: fadeIn 3s ease-in;
+}
+
 .home li:first-child{
     position: relative;
     top: 0em;
@@ -188,6 +201,13 @@ align-items: center;
     background-color: blueviolet;
 }
 
+.known-tech{
+    width: 100%;
+}
+
+.known-tech img{
+width: 8%;
+}
 
 /*.mini-nav li:nth-child(1) :nth-child(1){
     background-color: blueviolet;
@@ -291,6 +311,52 @@ textarea{
     display: none;
 }
 
+/*Animations*/
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 0.1;
+    }
+
+    20%{
+        opacity: 0.2;
+    }
+
+    30%{
+        opacity: 0.3;
+    }
+
+    40%{
+        opacity: 0.4;
+    }
+
+    50%{
+        opacity: 0.5;
+    }
+
+    60%{
+        opacity: 0.6;
+    }
+
+    70%{
+        opacity: 0.7;
+    }
+
+    80%{
+        opacity: 0.8;
+    }
+
+    90%{
+        opacity: 0.9;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
 
 @media only screen and (max-width: 600px){
     .header-mobile{
@@ -310,6 +376,10 @@ textarea{
 
     .home li:first-child{
         font-size: 0.8em;
+    }
+
+    .home h1{
+        transition: font-size 3s;
     }
 
     .about-me ul{
