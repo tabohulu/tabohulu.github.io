@@ -7,9 +7,9 @@ for(let i=0;i<header_links.length;i++){
     header_links[i].onclick=selectLink
 }
 
-for(let i=0;i<project_menu.length;i++){
+/*for(let i=0;i<project_menu.length;i++){
     project_menu[i].onclick=selectLinkProjs
-}
+}*/
 
 mobile_menu.onclick=showMobileMenu
 
@@ -106,3 +106,39 @@ request.onload = ()=>{
     }
 }*/
 
+// references to DOM elements
+const list = document.querySelector('.list');
+const items = Array.from(document.querySelectorAll('.item'));
+const indicators = Array.from(document.querySelectorAll('.proj_nav'));
+
+// create an observer with the list as intersection root
+const observer = new IntersectionObserver(onIntersectionObserved, {
+  root: list,
+  threshold: 0.6
+});
+
+// observe each item
+items.forEach(item => {
+  observer.observe(item);
+});
+
+// when the observer detects an entry changing 
+// (item entering or exiting  list)
+// and the entry is intersecting
+// get the intersecting item’s index
+// set the correct indicator to active
+function onIntersectionObserved(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const intersectingIndex = items.indexOf(entry.target);
+      activateIndicator(intersectingIndex);
+    }
+  });
+}
+
+// toggle an `active` class on the indicators
+function activateIndicator(index) {
+  indicators.forEach((indicator, i) => {
+    indicator.classList.toggle('active', i === index);
+  });
+}

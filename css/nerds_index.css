@@ -213,6 +213,66 @@ width: 8%;
     background-color: blueviolet;
 }*/
 
+/*=====================*/
+.list {
+    display: flex;
+    overflow-x: scroll;
+  
+    /* prevent accidentally going back or triggering other swipe events */
+    overscroll-behavior: contain;
+  
+    /* hide scroll bar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  
+    /* momentum scroll on iOS */
+    -webkit-overflow-scrolling: touch;
+  
+    /* disbable vertical scroll for touch */
+    touch-action: pan-x;
+  
+    /* scroll snapping */
+    scroll-snap-type: x mandatory;
+  }
+  
+  /* hide scroll bar */
+  .list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .item {
+    display: flex;
+    width: 100%;
+    padding: 1% 2%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+  
+    /* scroll snapping */
+    scroll-snap-align: start;
+  
+    /* maybe this will work in the future 🤷‍♂️ */
+    scroll-snap-stop: always;
+
+    
+  }
+  
+.item img{
+width: 30%;
+}
+
+.item section{
+    width: 40%;
+}
+
+.tech img{
+    width: 6%;
+}
+
+/*========================*/
+
+
 .projects-content{
     display: flex;
     width: 100%;
@@ -310,6 +370,7 @@ textarea{
 .hidden{
     display: none;
 }
+
 
 /*Animations*/
 @keyframes fadeIn{
@@ -418,10 +479,29 @@ textarea{
         text-align: center;
         display: none;
     }
+
+    .item img{
+        width: 50%;
+        }
+    
+    .item section{
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .item section h2{
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
     
     .tech img{
         width: 4%;
     }
+}
+
+.active{
+    background-color: blueviolet;
 }
 
 @media only screen and (max-width: 700px){
