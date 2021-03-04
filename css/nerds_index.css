@@ -7,6 +7,8 @@
     color: white;
 }
 
+
+
 body{
     background-color: black;
 }
@@ -29,8 +31,9 @@ body{
 }
 
 .header li:not(:nth-child(3)){
-    width: 9.3%;
     padding: 1%;
+    transition: background-color 0.3s ease-in;
+    margin: 0 0.1%;
 }
 
 .header li:nth-child(3){
@@ -40,10 +43,10 @@ body{
 
 .header a{
     padding: 10%;
-    transition: background-color 0.3s ease-in;
+    
 }
 
-.header a:hover{
+.header li:not(:nth-child(3)):hover{
 cursor: pointer;
 background-color: blueviolet;
 }
@@ -86,6 +89,10 @@ background-color: blueviolet;
 .header-mobile li:first-child{
     font-size: 2em;
     font-weight: bold;
+    
+}
+
+#name-text{
     color: blueviolet;
 }
 
@@ -120,17 +127,7 @@ background-color: blueviolet;
     text-align: center;
 }
 
-.home h1{
-    animation: fadeIn 1s ease-in 1s backwards;
-}
 
-.home p{
-    animation: fadeIn 1s ease-in 2s backwards ;
-}
-
-.home img{
-    animation: fadeIn 3s ease-in;
-}
 
 .home li:first-child{
     position: relative;
@@ -215,6 +212,7 @@ width: 8%;
 
 /*=====================*/
 .list {
+    scroll-behavior: smooth;
     display: flex;
     overflow-x: scroll;
   
@@ -357,8 +355,6 @@ textarea{
     margin-right: 1em;
 }
 
-
-
 .active{
     background-color: blueviolet;
 }
@@ -500,9 +496,7 @@ textarea{
     }
 }
 
-.active{
-    background-color: blueviolet;
-}
+
 
 @media only screen and (max-width: 700px){
     
