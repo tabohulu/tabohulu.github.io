@@ -193,7 +193,7 @@ align-items: center;
     padding: 10% 10%;
 }
 
-.mini-nav a:hover{
+.mini-nav li:hover{
     cursor: pointer;
     background-color: blueviolet;
 }
