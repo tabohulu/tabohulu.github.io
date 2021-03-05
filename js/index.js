@@ -2,7 +2,7 @@
 let header_links=document.getElementsByClassName("header-nav");
 let mobile_menu= document.getElementById('mobile-menu')
 let project_menu= document.getElementsByClassName("proj_nav")
-let prevActiveDiv=""
+let prevActiveDiv="home"
 
 window.onload=function(){
     const h1=document.querySelector('.home h1');
@@ -47,8 +47,16 @@ function selectLink(event){
         
 
     }
+    const prevDiv=document.getElementsByClassName(prevActiveDiv)[0];
+    prevDiv.style.animation='zoomAndRotate 1s ease-in forwards'
     console.log(curDiv)
-    hideGrid(curDiv,'menu-divs')
+    showMobileMenu()
+    setTimeout(function(){
+      prevDiv.style.animation=''
+      prevActiveDiv=curDiv;
+      hideGrid(curDiv,'menu-divs')
+    },1000)
+    
 
 }
 
@@ -87,7 +95,7 @@ function hideGrid(curDiv, divClass){
         inactiveDiv[i].classList.add('hidden')
     }
     activeDiv.classList.remove('hidden')
-    showMobileMenu()
+    
 }
 
 

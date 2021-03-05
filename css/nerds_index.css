@@ -80,6 +80,10 @@ background-color: blueviolet;
     background-color: blueviolet;
 }
 
+#mobile-dropdown li{
+    padding: 4% 0;
+}
+
 #mobile-dropdown li:not(:last-child){
     border-bottom: 1px solid gray;
     font-size: 1em;
@@ -107,6 +111,7 @@ background-color: blueviolet;
     height: 92.8vh;
     width: 100%;
     display: flex;
+    overflow: hidden;
 }
 
 /*||Home */
@@ -140,10 +145,12 @@ background-color: blueviolet;
     padding: 0 2%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
-
+    align-items: center; 
+    /*animation: zoomAndRotate 1s ease-in;   
+    */
 }
+
+
 
 
 .about-me ul{
@@ -411,6 +418,27 @@ textarea{
 
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes zoomAndRotate{
+    0%{
+        transform: scale(1.0);
+    }
+
+    
+
+    50%{
+        transform: scale(1.25) rotate3d(0, 0.1, 0, 90deg);
+    }
+
+    /*
+    90%{
+        transform:rotate3d(0, 0.1, 0, 180deg);
+    }*/
+
+    100%{
+        transform: scale(1.0) rotate3d(0, 0.1, 0, 180deg);
     }
 }
 
