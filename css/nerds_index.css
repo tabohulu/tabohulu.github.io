@@ -275,6 +275,11 @@ width: 30%;
     width: 6%;
 }
 
+.item section a:hover{
+    text-decoration: underline;
+    color: blueviolet;
+}
+
 /*========================*/
 
 
