@@ -269,8 +269,8 @@ margin-bottom: 3rem;
     width: 10px;
     height: 35px;
     background-image: url(../images/rsz_1rsz_1rsz_40712.png);
-    background-position: left bottom;
-    animation: fire 0.8s steps(11) infinite;
+    background-position: 5% bottom;
+    animation: fire 3s steps(11) infinite;
 
 }
 
@@ -381,7 +381,7 @@ margin-bottom: 3rem;
 
 @keyframes fire{
     100%{
-        background-position: -160px;
+        background-position: -150px;
     }
 }
 
