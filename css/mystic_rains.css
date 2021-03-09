@@ -81,7 +81,7 @@
     height: 100vh;
     position: fixed;
     margin-top: 59px;
-    background-color: blueviolet;
+    background-color: rgb(172, 125, 216);
     z-index: 0;
     
 }
@@ -111,64 +111,56 @@ margin-bottom: 3rem;
 
 }
 
-/*|| Missions*/
-.mission{
+/*|| About-Us*/
+.about-us{
     width: 100%;
     grid-row-start:4 ;
     grid-row-end: 6;
     grid-column-start:1 ;
     grid-column-end: 13;
-    background-color: blue;
+    background-color: rgb(100, 151, 218);
     z-index: 1;
     display: flex;
-    justify-content:center;
-    align-items: center;
+    justify-content:space-evenly;
+    align-items: stretch;
     flex-direction: column;
 }
 
-.mission .mission-flex{
+.info-snips{
+    width: 100%;
     display: flex;
-    justify-content: center;
-
+    padding: 0% 5%;
 }
 
-.mission h1{
-    margin-bottom: 2%;
-}
-
-.mission #mis-state{
-    width: 40%;
+#big-heading{
+    font-size: 3em;
     text-align: center;
 }
 
-.mission a{
-    color: rgb(24, 3, 43);
-    font-size: 1.5rem;
-    padding: 0.5% 1%;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: blueviolet;
+.info{
+    padding: 2%;
 }
 
-.mission a:hover{
-    color: white;
-    cursor: pointer;
-
+.info:not(:first-child){
+    border-left: 1px solid rgb(23, 1, 36);
 }
 
-.mission-flex .mission-div{
+.info p:not(:last-child){
+    font-size: 2.5em;
+}
+
+.facts h2{
+    font-size: 3em;
     text-align: center;
-    max-width: 20%;
-    border-right: 1px solid gray;
-    padding: 0 2%;
-    margin: 5% 0%;
-
+    margin-bottom: 1.5em;
 }
 
-.mission-flex .mission-div:last-child{
-    
-    border-right: none
+.fact-boxes{
+    width: 100%;
+    padding: 0 10%;
+    margin-bottom: 1.5em;
 }
+
 
 /*|| Projects*/
 .projects{
@@ -274,48 +266,84 @@ margin-bottom: 3rem;
 }
 
 .company-name{
-    position: fixed;
-    text-align: center;
-    z-index: 1;
-    background-color: blueviolet;
-    animation: fadeIn 2s ease-in 2.3s both;
+    width: 10px;
+    height: 35px;
+    background-image: url(../images/rsz_1rsz_1rsz_40712.png);
+    background-position: left bottom;
+    animation: fire 0.8s steps(11) infinite;
+
 }
+
+
+
+.monster {
+    position: relative;
+    width: 190px;
+    height: 240px;
+    background: url('../images/monster.png') left center;
+    animation: play 0.8s steps(10) infinite;
+  }
+
+  @keyframes play {
+      0%{
+          left: 0%;
+      }
+
+      50%{
+          left: 250px;
+      }
+    100% { 
+        background-position: -1900px;
+        left: 500px;
+     }
+ }
 
 @keyframes fadeInOut{
     0%{
-        opacity: 0;
-        transform: scale(1);
+        opacity: 1;
+        transform: scale(-1);
+
     }
+
     10%{
-        opacity: 0.2;
+        opacity: 0.9;
     }
+
     20%{
-        opacity: 0.4;
-    }
-    30%{
-        opacity: 0.6;
-    }
-    40%{
         opacity: 0.8;
     }
-    50%{
-        opacity: 1;
-        transform: scale(1.5);
+
+    30%{
+        opacity: 0.7;
     }
+
+    40%{
+        opacity: 0.6;
+    }
+
+    50%{
+        opacity: 0.5;
+        transform: scale(0);
+    }
+
     60%{
+        opacity: 0.4;
+    }
+
+    70%{
+        opacity: 0.3;
+    }
+
+    80%{
         opacity: 0.2;
     }
-    70%{
-        opacity: 0.4;
-    }
-    80%{
-        opacity: 0.6;
-    }
+
     90%{
-        opacity: 0.8;
+        opacity: 0.1;
     }
+
     100%{
-        opacity: 1;
+        opacity: 0;
         transform: scale(1);
     }
 }
@@ -329,6 +357,32 @@ margin-bottom: 3rem;
         opacity: 1;
     }
 
+}
+
+@keyframes moveRight{
+    0%{
+        transform: translateX(0px);
+    }
+
+    100%{
+        transform: translateX(200px);
+    }
+}
+
+@keyframes changeColor{
+    0%{
+        color: rgb(43, 55, 226);
+    }
+
+    100%{
+        color: rgb(12, 17, 63);
+    }
+}
+
+@keyframes fire{
+    100%{
+        background-position: -160px;
+    }
 }
 
 

@@ -8,24 +8,21 @@ companyName.style.top=`${Math.floor((divHeight-(Number(window.getComputedStyle(c
 companyName.style.left=`${Math.floor((divWidth-(Number(window.getComputedStyle(companyName).width.split('px')[0])))/2)}px`
 const smallBoxWidth=10
 const boxInterval=2.5;
-const animationDuration=3;
+const animationDuration=2;
 const totalNoBoxes=Math.floor(divWidth/(smallBoxWidth+boxInterval))
 
-let divArray=[];
-setTimeout(showBoxes,500)
-//showBoxes()
+//setTimeout(showBoxes,500);
 
 function showBoxes(){
-    for(let j=0;j<44;j++){
-    const tempContainer=document.createElement('div')
-    tempContainer.classList.add('small-box-container')
-    const temArr=[];
+    for(let j=0;j<14;j++){
+    const tempContainer=document.createElement('div');
+    tempContainer.classList.add('small-box-container');
     for(let i=0;i<totalNoBoxes;i++){
-        const randomDelay=Math.floor(Math.random()*animationDuration*500)
+        const randomDelay=Math.floor(Math.random()*animationDuration*500);
         const box=document.createElement('div');
-        box.classList.add('small-box')
-        box.id=`${j}-${i}`
-        box.style.animation=`fadeInOut ${animationDuration}s ease-in ${randomDelay}ms backwards`
+        box.classList.add('small-box');
+        box.id=`${j}-${i}`;
+        box.style.animation=`fadeInOut ${animationDuration}s ease-in ${randomDelay}ms both`;
         tempContainer.appendChild(box);
     }
     homeDiv.appendChild(tempContainer)
@@ -33,26 +30,3 @@ function showBoxes(){
 
 console.log(divHeight/2)
 }
-
-/*for(let j=0;j<44;j++){
-    const tempContainer=document.createElement('div')
-    tempContainer.classList.add('small-box-container')
-    const temArr=[];
-    for(let i=0;i<totalNoBoxes;i++){
-        const randomDelay=Math.floor(Math.random()*animationDuration*500)
-        const box=document.createElement('div');
-        box.classList.add('small-box')
-        box.id=`${j}-${i}`
-        box.style.animation=`fadeInOut ${animationDuration}s ease-in ${randomDelay}ms backwards`
-        tempContainer.appendChild(box);
-    }
-    homeDiv.appendChild(tempContainer)
-}
-
-console.log(divHeight/2)*/
-
-window.onload=function(){
-    console.log('document loaded')
-}
-// create boxes to fill the screen with equal separation between them
-// display boxes
