@@ -83,12 +83,15 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    
     
 }
 
 .tag-line p{
     font-size: 3em;
     padding: 0 1em;
+    flex-shrink: 1;
 }
 
 .tag-line p:not(:last-child){
