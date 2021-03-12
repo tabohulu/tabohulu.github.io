@@ -5,17 +5,14 @@
     list-style: none;
     text-decoration: none;
 }
+
+.hidden{
+    display: none;
+}
 .grid{
     display: grid;
     width: 100%;
-    height: 600vh;
     grid-template: 60px repeat(11,1fr)/repeat(12,1fr);
-}
-
-.box{
-    border: 1px solid blueviolet;
-    height: 30vh;
-
 }
 
 .header{
@@ -30,7 +27,7 @@
     width: 100%;
     grid-row:1/2 ;
     grid-column:1/13;
-    z-index: 2;
+    z-index: 1;
     color: gray;
 }
 
@@ -38,14 +35,11 @@
     display: flex;
     justify-content:center;
     justify-self: flex-start;
-
 }
 
 .menu-options li:not(:first-child){
     margin-left: 25px;
 }
-
-
 
 .menu-options li:hover{
     text-decoration: underline;
@@ -73,43 +67,74 @@
 .home{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     width: 100%;
     grid-row-start:2 ;
     grid-row-end: 4;
     grid-column-start:1 ;
     grid-column-end: 13;
     height: 100vh;
-    position: fixed;
-    margin-top: 59px;
-    background-color: rgb(172, 125, 216);
-    z-index: 0;
+    background-color:rgb(166,66,184);
+    background: linear-gradient(90deg, rgba(167,138,172,1) 0%, rgba(148,119,207,1) 35%);  
+}
+
+.tag-line{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
     
 }
 
-.home p{
-font-size: 6rem;
-margin-bottom: 3rem;
+.tag-line p{
+    font-size: 3em;
+    padding: 0 1em;
 }
 
-.home .home-button{
-    padding: 0.6% 2%;
-    border: 1px solid black;
-    border-radius: 5px;
+.tag-line p:not(:last-child){
+    border-right: 1px black dashed;
 }
 
-.home a{
-    color: rgb(24, 3, 43);
-    font-size: 2rem;
-    padding: 0.5% 1%;
-    border: 1px solid black;
-    border-radius: 5px;
+.tag-line p:nth-child(1){
+    animation: drop 3s steps(50) backwards;
 }
 
-.home a:hover{
-    color: white;
+.tag-line p:nth-child(2){
+    animation: drop 3s steps(50) 100ms backwards;
+}
+
+.tag-line p:nth-child(3){
+    animation: drop 3s steps(50) 500ms backwards;
+}
+
+.we-are{
+    font-size: 3em;
+    animation: fadeIn 3s steps(50) both;
+    opacity: 0;
+}
+
+.text-container{
+    display: flex;
+    justify-content: center;
+}
+
+.small-box{
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    margin-bottom: 1.0px;
+    margin-right: 1.0px;
+}
+
+.small-box:hover{
     cursor: pointer;
-
+    background-color: blue;
 }
+
+
+
+
 
 /*|| About-Us*/
 .about-us{
@@ -119,7 +144,6 @@ margin-bottom: 3rem;
     grid-column-start:1 ;
     grid-column-end: 13;
     background-color: rgb(100, 151, 218);
-    z-index: 1;
     display: flex;
     justify-content:space-evenly;
     align-items: stretch;
@@ -170,56 +194,10 @@ margin-bottom: 3rem;
     grid-column-start:1 ;
     grid-column-end: 13;
     background-color:teal;
-    z-index: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
-.projects h2{
-    margin-bottom: 0em;
-}
 
-.projects .projects-flex{
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    padding: 0 5%;
-    flex-wrap: wrap;
-    margin: 2em 0;
-
-
-}
-
-.projects .projects-flex .img-items{
-   
-    width: 30%;
-    margin:0em 0;
-
-}
-
-.projects .projects-flex .img-items img{
-    width: 100%;
-
-}
-
-.projects a{
-    color: rgb(24, 3, 43);
-    font-size: 1.5rem;
-    padding: 0.5% 1%;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: blueviolet;
-    margin-top: 0em;
-}
-
-.projects a:hover{
-    color: white;
-    cursor: pointer;
-
-}
 
 .products{
     width: 100%;
@@ -228,7 +206,6 @@ margin-bottom: 3rem;
     grid-column-start:1 ;
     grid-column-end: 13;
     background-color:yellowgreen;
-    z-index: 1;
 }
 
 .contact{
@@ -238,150 +215,68 @@ margin-bottom: 3rem;
     grid-column-start:1 ;
     grid-column-end: 13;
     background-color:royalblue;
-    z-index: 1;
 }
 
-.small-box-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2.5px;
-    margin-top: 2.5px;
-    
-}
-
-.small-box{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    flex-grow: 0;
-    background-color: black;
-    animation: fadeInOut 1s ease-in;
-   
-}
-.small-box:not(:first-child){
-    margin-left: 2.5px;
-    
-}
-
-.company-name{
-    width: 10px;
-    height: 35px;
-    background-image: url(../images/rsz_1rsz_1rsz_40712.png);
-    background-position: 5% bottom;
-    animation: fire 3s steps(11) infinite;
-
-}
-
-
-
-.monster {
-    position: relative;
-    width: 190px;
-    height: 240px;
-    background: url('../images/monster.png') left center;
-    animation: play 0.8s steps(10) infinite;
-  }
-
-  @keyframes play {
-      0%{
-          left: 0%;
-      }
-
-      50%{
-          left: 250px;
-      }
-    100% { 
-        background-position: -1900px;
-        left: 500px;
-     }
- }
-
-@keyframes fadeInOut{
-    0%{
+@keyframes fadeIn{
+    100%{
         opacity: 1;
-        transform: scale(-1);
-
     }
+}
 
-    10%{
-        opacity: 0.9;
-    }
-
-    20%{
-        opacity: 0.8;
-    }
-
-    30%{
-        opacity: 0.7;
-    }
-
-    40%{
-        opacity: 0.6;
-    }
-
+@keyframes fadeAndShrink{
     50%{
-        opacity: 0.5;
-        transform: scale(0);
+        transform: scale(2);
+        transform: translateX(250px);
     }
 
-    60%{
-        opacity: 0.4;
-    }
-
-    70%{
-        opacity: 0.3;
-    }
-
-    80%{
-        opacity: 0.2;
-    }
-
-    90%{
-        opacity: 0.1;
-    }
 
     100%{
         opacity: 0;
         transform: scale(1);
+        transform: translateX(0);
+        transform: rotateX(180deg);
     }
+
+    
 }
 
-@keyframes fadeIn{
-    0%{
+@keyframes fadeAndShrink2{
+    50%{
+        transform: scale(2);
+        transform: translateX(-250px);
+    }
+
+
+    100%{
         opacity: 0;
+        transform: scale(1);
+        transform: translateX(0);
+        transform: rotateX(180deg);
     }
 
-    100%{
-        opacity: 1;
-    }
-
+    
 }
 
-@keyframes moveRight{
+@keyframes shrink{
+    50%{
+        transform: scale(2);
+    }
+
+
+    100%{
+        transform: scale(1);
+    }
+
+    
+}
+
+@keyframes drop{
     0%{
-        transform: translateX(0px);
+        transform: translateY(-300px);
     }
 
     100%{
-        transform: translateX(200px);
-    }
-}
-
-@keyframes changeColor{
-    0%{
-        color: rgb(43, 55, 226);
-    }
-
-    100%{
-        color: rgb(12, 17, 63);
-    }
-}
-
-@keyframes fire{
-    100%{
-        background-position: -150px;
+        transform: translateY(0px);
     }
 }
 

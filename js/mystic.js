@@ -1,32 +1,51 @@
-// get home div from DOM
-const homeDiv=document.getElementsByClassName('home')[0];
-const divWidth=Number(window.getComputedStyle(homeDiv).width.split('px')[0]);
-const divHeight=Number(window.getComputedStyle(homeDiv).height.split('px')[0]);
-const companyName=document.getElementsByClassName('company-name')[0];
-console.log(`${Math.floor(divHeight/2)}`)
-companyName.style.top=`${Math.floor((divHeight-(Number(window.getComputedStyle(companyName).height.split('px')[0])))/2)}px`;
-companyName.style.left=`${Math.floor((divWidth-(Number(window.getComputedStyle(companyName).width.split('px')[0])))/2)}px`
-const smallBoxWidth=10
-const boxInterval=2.5;
-const animationDuration=2;
-const totalNoBoxes=Math.floor(divWidth/(smallBoxWidth+boxInterval))
+'use strict'
+let text_container=document.getElementsByClassName('text-container')[0];
+let divs=[]
+let toDel=[]
+let dd=[9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 30, 40, 48, 56, 63, 64, 65, 66, 67, 68, 69, 70, 71, 99, 100, 101, 102, 103, 112, 121, 129, 128, 127, 117, 108, 104, 105, 106, 107, 131, 132, 133, 134];
+stackDots(9,16)
 
-//setTimeout(showBoxes,500);
+for(let i=0;i<divs.length;i++){
+    const temp=Math.floor(Math.random()*1501);
+    const rr=Math.floor(Math.random()*2)
+    if(!dd.includes(i)){
+        
+        //divs[i].style.opacity='0'
+        divs[i].style.animation=(rr===0)?`fadeAndShrink 3s steps(50) ${temp}ms forwards`:`fadeAndShrink2 3s steps(50) ${temp}ms forwards`
+    }else{
+        divs[i].style.animation=`shrink 3s steps(50) ${temp}ms forwards`
+    }
+    //document.getElementsByClassName('small-box')[i].hidden=dd.includes(i)?false:true
+    //console.log(dd.includes(i)?false:true,i)
+    //console.log(dd.includes(i))
+}
+    
 
-function showBoxes(){
-    for(let j=0;j<14;j++){
-    const tempContainer=document.createElement('div');
-    tempContainer.classList.add('small-box-container');
-    for(let i=0;i<totalNoBoxes;i++){
-        const randomDelay=Math.floor(Math.random()*animationDuration*500);
+function stackDots(noOfDots,k){
+    for(let j=0;j<k;j++){
+    const temp=document.createElement('div')
+    for(let i=0;i<noOfDots;i++){
         const box=document.createElement('div');
         box.classList.add('small-box');
-        box.id=`${j}-${i}`;
-        box.style.animation=`fadeInOut ${animationDuration}s ease-in ${randomDelay}ms both`;
-        tempContainer.appendChild(box);
+        box.id=`${i}-${j}`;
+        box.onclick=function(event){
+            setHidden(event)
+        };
+        box.style.zIndex='1'
+        divs.push(box)
+        temp.appendChild(box)
     }
-    homeDiv.appendChild(tempContainer)
+    text_container.appendChild(temp)
+    
+}
+const width=window.getComputedStyle(text_container).top;
+const height=window.getComputedStyle(text_container).bottom;
+console.log(width,height)
 }
 
-console.log(divHeight/2)
+
+function setHidden(event){
+    event.target.style.backgroundColor='rgb(166,66,184)'
+    toDel.push(divs.indexOf(event.target))
+    console.log(toDel)
 }
