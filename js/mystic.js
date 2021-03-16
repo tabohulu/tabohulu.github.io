@@ -1,8 +1,34 @@
 'use strict'
 let text_container=document.getElementsByClassName('text-container')[0];
+let options=Array.from(document.getElementsByClassName('options'));
 let divs=[]
 let toDel=[]
 let dd=[9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 30, 40, 48, 56, 63, 64, 65, 66, 67, 68, 69, 70, 71, 99, 100, 101, 102, 103, 112, 121, 129, 128, 127, 117, 108, 104, 105, 106, 107, 131, 132, 133, 134];
+let main_divs=[document.getElementsByClassName('home')[0],document.getElementsByClassName('about-us')[0],document.getElementsByClassName('projects')[0]]
+
+let observer_options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.9
+  }
+
+  function changeMenuColor(entries){
+      entries.forEach(entry=>{
+          if(entry.isIntersecting & entry.intersectionRatio >= 0.9){
+              const index=main_divs.indexOf(entry.target)
+              setColor(index)
+            console.log(entry.target.id,entry.intersectionRatio,index)
+          }
+          
+      })
+  }
+
+  
+let observer= new IntersectionObserver(changeMenuColor,observer_options)
+main_divs.forEach(div=>{
+    observer.observe(div)
+})
+
 setOnclickListeners()
 stackDots(9,16);
 setAnimation();
@@ -50,14 +76,10 @@ function setAnimation(){
         }else{
             divs[i].style.animation=`shrink 3s steps(50) ${temp}ms forwards`
         }
-        //document.getElementsByClassName('small-box')[i].hidden=dd.includes(i)?false:true
-        //console.log(dd.includes(i)?false:true,i)
-        //console.log(dd.includes(i))
     }
 }
 
 function setOnclickListeners(){
-    const options=Array.from(document.getElementsByClassName('options'))
     options.forEach(option=>{
         option.onclick=scrollToDiv;
     })
@@ -69,8 +91,15 @@ function scrollToDiv(event){
 const id=event.target.innerText.toLowerCase().replace(' ','-');
 console.log(id)
 const div=document.getElementById(id)
-div.scrollTop=100
 console.log(div===null)
 div !==null?(div.scrollIntoView({behavior: "smooth", block: "start",inline:"nearest"})):(console.log(`${id} div does not exist`))
+
+}
+
+
+function setColor(index){
+    options.forEach((option,i)=>{
+        option.classList.toggle('active',i===index)
+    })
 
 }

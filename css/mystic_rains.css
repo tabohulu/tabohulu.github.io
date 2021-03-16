@@ -10,6 +10,11 @@
     display: none;
 }
 
+.active{
+    color: blueviolet;
+    font-weight: bold;
+}
+
 .flex{
     width: 100%;
     display: flex;
