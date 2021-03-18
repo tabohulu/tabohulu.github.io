@@ -112,6 +112,32 @@ function setOnclickListeners(){
     })
 
     gal_num.innerHTML=`<strong>1</strong> | ${gal_items.length}`  
+
+    gal_items.forEach(div=>{
+
+        div.onmouseover=function(){
+            gal_nav.forEach(nav=>{
+                nav.style.opacity=0.2;
+            })
+        }
+
+        div.onmouseout=function(){
+            gal_nav.forEach(nav=>{
+                nav.style.opacity=0;
+            })
+        }
+
+    })
+
+    gal_nav.forEach(navs=>{
+        navs.onmouseover=()=>{
+            navs.style.opacity=1
+        }
+    })
+
+   
+
+    
 }
 
 function scrollToDiv(event){
