@@ -1,10 +1,16 @@
 'use strict'
 let text_container=document.getElementsByClassName('text-container')[0];
 let options=Array.from(document.getElementsByClassName('options'));
+let gal_nav=Array.from(document.getElementsByClassName('gal_nav'))
+let gal_items=Array.from(document.getElementsByClassName('proj-item'));
+let gallery_box=document.getElementsByClassName('gallery-box')[0]
+let gal_num=document.getElementsByClassName('gal_number')[0];
+let proj_index=0;
 let divs=[]
 let toDel=[]
 let dd=[9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 30, 40, 48, 56, 63, 64, 65, 66, 67, 68, 69, 70, 71, 99, 100, 101, 102, 103, 112, 121, 129, 128, 127, 117, 108, 104, 105, 106, 107, 131, 132, 133, 134];
 let main_divs=[document.getElementsByClassName('home')[0],document.getElementsByClassName('about-us')[0],document.getElementsByClassName('projects')[0]]
+
 
 let observer_options = {
     root: null,
@@ -28,6 +34,23 @@ let observer= new IntersectionObserver(changeMenuColor,observer_options)
 main_divs.forEach(div=>{
     observer.observe(div)
 })
+
+
+/*gal_items.forEach((div,i)=>{
+    const rect=div.getBoundingClientRect()
+    console.log(`left for project ${i} ${rect.left}`)
+})*/
+
+let proj_div_xCords=gal_items.map(div=>{
+    const rect=div.getBoundingClientRect()
+    return rect.left
+})
+
+let div_yCords=main_divs.map(div=>{
+    const rect=div.getBoundingClientRect()
+    return rect.top
+})
+
 
 setOnclickListeners()
 stackDots(9,16);
@@ -83,16 +106,20 @@ function setOnclickListeners(){
     options.forEach(option=>{
         option.onclick=scrollToDiv;
     })
-    
-}
 
+    gal_nav.forEach(nav=>{
+        nav.onclick=galleryScroll
+    })
+
+    gal_num.innerHTML=`<strong>1</strong> | ${gal_items.length}`  
+}
 
 function scrollToDiv(event){
 const id=event.target.innerText.toLowerCase().replace(' ','-');
 console.log(id)
 const div=document.getElementById(id)
 console.log(div===null)
-div !==null?(div.scrollIntoView({behavior: "smooth", block: "start",inline:"nearest"})):(console.log(`${id} div does not exist`))
+div !==null?(window.scrollTo(0,div_yCords[main_divs.indexOf(div)] - div_yCords[0])):(console.log(`${id} div does not exist`))
 
 }
 
@@ -101,5 +128,17 @@ function setColor(index){
     options.forEach((option,i)=>{
         option.classList.toggle('active',i===index)
     })
+}
 
+function galleryScroll(event){
+    if(event.target.id==='left'){
+        proj_index=proj_index-1>=0?proj_index-1:proj_index
+    }else{
+        proj_index=proj_index+1<gal_items.length?proj_index+1:proj_index
+    }
+
+    document.getElementsByClassName('proj-list')[0].scrollTo(proj_div_xCords[proj_index]-proj_div_xCords[0],div_yCords[2])
+    gal_num.innerHTML=`<strong>${proj_index+1}</strong> | ${gal_items.length}` 
+
+    console.log(proj_index)
 }
