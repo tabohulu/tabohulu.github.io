@@ -44,7 +44,7 @@
 .grid{
     display: grid;
     width: 100%;
-    grid-template: 60px repeat(11,1fr)/repeat(12,1fr);
+    grid-template: 60px repeat(8,1fr)/repeat(12,1fr);
 }
 
 .header{
@@ -306,23 +306,69 @@
 
 
 
-.products{
+/*.products{
     width: 100%;
     grid-row-start:8 ;
     grid-row-end: 10;
     grid-column-start:1 ;
     grid-column-end: 13;
     background-color:yellowgreen;
-}
+}*/
 
 .contact{
     width: 100%;
-    grid-row-start:10 ;
-    grid-row-end: 13;
+    grid-row-start:8 ;
+    grid-row-end: 10;
     grid-column-start:1 ;
     grid-column-end: 13;
-    background-color:royalblue;
+    background-color:rgb(166,66,184);
+    background: linear-gradient(90deg, rgba(167,138,172,1) 0%, rgba(148,119,207,1) 35%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.contact h2{
+    align-self: flex-start;
+}
+
+#contact-box{
+    border: 1px solid green;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 10%;
+    background-color: honeydew;
+}
+
+#contact-box textarea{
+    margin-bottom: 1em;
+}
+
+#contact-box input[type=text]{
+padding: 0.5em;
+}
+
+#contact-box input[type=submit]{
+    padding: 0.5em;
+    font-weight: bold;
+}
+
+#contact-box input[type=submit]:hover{
+    cursor: pointer;
+}
+
+#contact-box section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+    
 
 @keyframes fadeIn{
     100%{

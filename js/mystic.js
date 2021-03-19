@@ -9,7 +9,8 @@ let proj_index=0;
 let divs=[]
 let toDel=[]
 let dd=[9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 30, 40, 48, 56, 63, 64, 65, 66, 67, 68, 69, 70, 71, 99, 100, 101, 102, 103, 112, 121, 129, 128, 127, 117, 108, 104, 105, 106, 107, 131, 132, 133, 134];
-let main_divs=[document.getElementsByClassName('home')[0],document.getElementsByClassName('about-us')[0],document.getElementsByClassName('projects')[0]]
+let main_divs=[document.getElementsByClassName('home')[0],document.getElementsByClassName('about-us')[0],
+document.getElementsByClassName('projects')[0],document.getElementsByClassName('contact')[0]]
 
 
 let observer_options = {
