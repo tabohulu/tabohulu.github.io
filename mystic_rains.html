@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link type="text/css" rel="stylesheet" href="./css/mystic_rains.css">
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/85051c0c7e.js" crossorigin="anonymous"></script>
-        <script src="./js/mystic.js" defer></script>
-        <title>MysticRains</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MysticRains</title>
+    <link rel="stylesheet" href="./css/mystic_rains.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/85051c0c7e.js" crossorigin="anonymous"></script>
+    <script src="./js/mystic.js" defer></script>
+    
+</head>
 
-    </head>
-
-
-    <body>
-        <div class="grid">
-
-        
-        <div class="header">
-            <ul class="menu-options">
-                <li class="options">Home</li>
-                <li class="options">About Us</li>
-                <li class="options">Projects</li>
-                <li class="options">Contact</li>
+<body>
+    <div class="header">
+        <div class="mobile-menu-div hidden">
+           <i class="fas fa-bars"></i>
+            <ul class="mobile-menu hidden" >
+                <li class="menu-items" >Home</li>
+                <li class="menu-items">About Us</li>
+                <li class="menu-items">Projects</li>
+                <li class="menu-items">Contact</li>
             </ul>
+        </div>
+        <ul class="large-screen-menu">
+            <li class="menu-items pc active">Home</li>
+            <li class="menu-items pc">About Us</li>
+            <li class="menu-items pc">Projects</li>
+            <li class="menu-items pc">Contact</li>
+        </ul>
 
-            <ul class="socials">
+        <ul class="header-socials">
                 <li><i class="fab fa-facebook-square"></i></li>
                 <li><i class="fab fa-linkedin"></i></li>
                 <li><i class="fab fa-instagram"></i></li>
-            </ul>
-        </div>
-        
-        
+        </ul>
+    </div>
+
+    <div class="grid">
+
         <div class="home" id="home">
             <div class="tag-line">
-                <p class="large">Innovation</p>
-                <p class="large">Creativity</p>
-                <p class="large">Usefulness</p>
+                <p class="medium">Innovation</p>
+                <p class="medium">Creativity</p>
+                <p class="medium">Usefulness</p>
             </div>
             
             <div class="text-container">
@@ -51,7 +58,7 @@
 
         <div class="about-us" id="about-us">
             <h2 class="left-title">About Us</h2>
-            <p id="big-heading">
+            <p class="medium description" style="text-align: center;">
                 <strong>MysticRains</strong> is a social media marketing company based in Kumasi.
             </p>
 
@@ -64,14 +71,14 @@
                 </div>
 
                 <div class="info">
-                    <h3>Succesful Projects</h3>
+                    <h3>Projects</h3>
                     <p>5</p>
                     <p>And counting! We are in the process of completing many more impacting projects</p>
 
                 </div>
 
                 <div class="info">
-                    <h3>Testing Devices</h3>
+                    <h3>Devices</h3>
                     <p>3</p>
                     <p>And we plan to add a bit more just to be thorough</p>
 
@@ -80,9 +87,9 @@
             </div>
 
             <div class="facts">
-                <h2>FAQs</h2>
+                <p class="large">FAQs</p>
 
-                <div class="fact-boxes">
+                <div class="fact-box">
                     <h3>What are your areas of expertise?</h3>
                     <section>
                         Currently, we are heavily into social media marketing and logo design. In the 
@@ -91,16 +98,16 @@
                     </section>
                 </div>
 
-                <div class="fact-boxes">
+                <div class="fact-box">
                     <h3>Are you taking on any new projects now?</h3>
                     <section>
                         Yes indeed! We would greatly appreciate doing business with you. Hit us 
                         up on any of our socials and lets talk.
                     </section>
                 </div>
-
             </div>
 
+            
         </div>
 
         <div class="projects" id="projects">
@@ -111,9 +118,7 @@
             </ul>
 
             <div class="gallery-box">
-                <!-- <div class="gal_nav" id="left"> -->
                     <i class="fas fa-angle-left gal_nav" id="left"></i>
-                <!-- </div> -->
                 
                 <ul class="proj-list">
 
@@ -126,46 +131,47 @@
     
                     <li class="proj-item">
                         <p class="large"><strong>Project Name2</strong></p>
-                        <p class="medium">project description that has many things written in here</p>
+                        <p class="medium" style="text-align: center;">project description that has many things written in here</p>
                         <div class="button">Learn More</div>
-                        <img src="./images/photo-1593642532454-e138e28a63f4.jpeg" alt="">
+                        <img src="./images/photo-1593642532454-e138e28a63f4.jpeg"  alt="">
     
                     </li>
     
                 </ul>
-                <!-- <div class="gal_nav" id="right"> -->
                     <i class="fas fa-angle-right gal_nav" id="right" ></i>
-                <!-- </div> -->
             </div>
+
+            
             
 
         </div>
 
         <div class="contact" id="contact">
-                <h2 class="left-title">Contact</h2>
-                <p style="font-size: 3em; color: white;">Contact Us</p>
-            <div id="contact-box">
+            <h2 class="left-title">Contact</h2>
+            <p style="font-size: 3em; color: white;">Contact Us</p>
+        <div id="contact-box">
 
-                <section>
-                    <label for="name">Name</label><input type="text" id="name">
-                </section>
-    
-                <section>
-                    <label for="email">Email</label><input type="text" id="email">
-                </section>
-    
-                <textarea name="" id="" cols="30" rows="10" placeholder="Hi"></textarea>
-                <input type="submit" value="Send">
-            </div>
-            
-            
-            
+            <section>
+                <label for="name">Name</label><input type="text" id="name">
+            </section>
+
+            <section>
+                <label for="email">Email</label><input type="text" id="email">
+            </section>
+
+            <textarea name="" id="" cols="30" rows="10" placeholder="Hi"></textarea>
+            <input type="submit" value="Send">
+        </div>
+        
+        
+        
+
+    </div>
 
         </div>
 
-       
-    
     </div>
-    </body>
+    
+</body>
 
 </html>

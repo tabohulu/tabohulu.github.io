@@ -215,8 +215,9 @@ width: 8%;
 
 /*=====================*/
 .list {
-    scroll-behavior: smooth;
+    
     display: flex;
+    scroll-behavior: smooth;
     overflow-x: scroll;
   
     /* prevent accidentally going back or triggering other swipe events */
@@ -481,6 +482,10 @@ textarea{
 
     form{
         width: 100%;
+    }
+
+    .projects{
+        height: 70vh;
     }
 
     .projects-content img{
