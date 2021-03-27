@@ -16,6 +16,14 @@ let gallery_box=document.getElementsByClassName('gallery-box')[0];
 let gal_num=document.getElementsByClassName('gal_number')[0];
 let proj_index=0;
 
+let project_descriptions=[{
+    name:'Project 1',
+    description:'project1 description that has many things written in here'
+},{
+    name:'Project 2',
+    description:'project2 description that has many things written in here'
+}]
+
 let proj_div_xCords=gal_items.map(div=>{
     const rect=div.getBoundingClientRect()
     return rect.left
@@ -23,29 +31,56 @@ let proj_div_xCords=gal_items.map(div=>{
 
 let div_yCords=main_divs.map(div=>{
     const rect=div.getBoundingClientRect()
+    console.log('rectange: '+rect.top)
     return rect.top
 })
+
+console.log(div_yCords)
 
 let observer_options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.9
+    threshold: 0.8
   }
+
+let projects_observer={
+    root:document.getElementsByClassName('proj-list')[0],
+    rootMargin:'0px',
+    threshold:0.6
+}  
 
 let observer= new IntersectionObserver(changeMenuColor,observer_options)
 main_divs.forEach(div=>{
     observer.observe(div)
 })  
 
+let proj_observer=new IntersectionObserver(projChangeDeets,projects_observer)
+gal_items.forEach(item=>{
+    proj_observer.observe(item)
+})
+
   function changeMenuColor(entries){
       entries.forEach(entry=>{
-          if(entry.isIntersecting & entry.intersectionRatio >= 0.9){
+          if(entry.isIntersecting & entry.intersectionRatio >= 0.8){
               const index=main_divs.indexOf(entry.target)
               console.log(index)
               setColor(index)
               console.log(`${entry.target.id} ${entry.intersectionRatio} Index : ${index}`)
           }
           
+      })
+  }
+
+  function projChangeDeets(entries){
+      entries.forEach(entry=>{
+          if(entry.isIntersecting && entry.intersectionRatio>=0.6){
+            const index=gal_items.indexOf(entry.target)
+            gal_num.innerHTML=`<strong>${index+1}</strong> | ${gal_items.length}`
+            const temp=Array.from(document.querySelectorAll('ul.project-deets >li>p'))
+            temp[0].innerHTML=`<strong>${project_descriptions[index].name}</strong>`
+            temp[1].innerText=project_descriptions[index].description
+            console.log(index)
+          }
       })
   }
 
@@ -133,6 +168,7 @@ function goToMenu(event){
     let div_name=event.target.innerText.toLowerCase().replace(' ','-');
     console.log(div_name)
     const target_div=document.getElementById(div_name);
+    //target_div.scrollIntoView(true)
     target_div !==null?(window.scrollTo(0,div_yCords[main_divs.indexOf(target_div)] - div_yCords[0])):(console.log(`${id} div does not exist`))
 
     toggleMenu()
@@ -151,7 +187,7 @@ function galleryScroll(event){
     }
 
     document.getElementsByClassName('proj-list')[0].scrollTo(proj_div_xCords[proj_index]-proj_div_xCords[0],div_yCords[2])
-    gal_num.innerHTML=`<strong>${proj_index+1}</strong> | ${gal_items.length}` 
+     
 
     console.log(proj_index)
 }
