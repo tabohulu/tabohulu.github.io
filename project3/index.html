@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
+    <title>Bomodoro</title>
+
+</head>
+
+<body>
+        <div id="main">
+            <section id="sec">
+                <div id="session"></div>
+                <div id="rounds_done"></div>
+            </section>
+            <div id="timer_settings">
+                <label for="learn">Learn</label><input type="text" name="learn" id="learn" value="25">
+                <label for="rest">Rest</label><input type="text" name="rest" id="rest" value="5">
+                <label for="rounds">Rounds</label><select name="rounds" id="rounds">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option selected>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                </select>
+            </div>
+            
+            <div id="display">
+                00:00
+            </div>
+            <div id="button">
+                Start
+            </div>
+        </div>
+        
+    
+    
+   
+    <script src="./index.js"  async></script>
+</body>
+
+</html>

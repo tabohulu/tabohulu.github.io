@@ -48,12 +48,15 @@ function selectLink(event){
 
     }
     const prevDiv=document.getElementsByClassName(prevActiveDiv)[0];
-    prevDiv.style.animation='zoomAndRotate 1s ease-in forwards'
     console.log(curDiv)
+    prevDiv.style.animation='fadeIn 0.8s ease-in forwards reverse'
+    
     showMobileMenu()
     setTimeout(function(){
       prevDiv.style.animation=''
-      prevActiveDiv=curDiv;
+      if(curDiv !== '-' && curDiv!=='' && curDiv!==' '){
+        prevActiveDiv =curDiv;
+      }
       hideGrid(curDiv,'menu-divs')
     },1000)
     
@@ -89,13 +92,13 @@ function changeColorOnClickProj(event){
 
 function hideGrid(curDiv, divClass){
     let activeDiv=document.getElementsByClassName(curDiv)[0];
-
-    let inactiveDiv=document.getElementsByClassName(divClass)
+    if(activeDiv){
+      let inactiveDiv=document.getElementsByClassName(divClass)
     for(var i=0;i<inactiveDiv.length;i++){
         inactiveDiv[i].classList.add('hidden')
     }
     activeDiv.classList.remove('hidden')
-    
+    }
 }
 
 

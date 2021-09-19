@@ -30,13 +30,13 @@ body{
     align-items: center;
 }
 
-.header li:not(:nth-child(3)){
+.header li:not(:nth-child(4)){
     padding: 1%;
     transition: background-color 0.3s ease-in;
     margin: 0 0.1%;
 }
 
-.header li:nth-child(3){
+.header li:nth-child(4){
     font-size: 1.5em;
     color: blueviolet;
 }
@@ -46,10 +46,12 @@ body{
     
 }
 
-.header li:not(:nth-child(3)):hover{
+.header li:not(:nth-child(4)):hover{
 cursor: pointer;
 background-color: blueviolet;
 }
+
+
 
 /*||Header-Mobile*/
 .header-mobile{
@@ -260,10 +262,18 @@ width: 8%;
     
   }
   
-.item img{
-width: 30%;
-}
+  .item a{
+      width: 30%;
+  }
 
+  .item a img{
+      width: 100%;
+  }
+
+  #contacts_ul .fab{
+      margin-right: 0.5em;
+    font-size: 1em;
+}
 .item section{
     width: 40%;
 }
@@ -501,6 +511,7 @@ textarea{
         width: 100%;
         text-align: center;
         display: none;
+        margin-bottom: 1em;
     }
 
     .item img{

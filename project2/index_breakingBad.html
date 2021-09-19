@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breaking Bad Trivia</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <style>
+      *{
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        list-style: none;
+        scroll-behavior: smooth;
+      }
+
+      body{
+        background-color:  #032202;
+      }
+
+      .header{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 5px;
+      }
+
+      .nav{
+        width: 5%;
+        text-align: center;
+      }
+
+      .nav:hover{
+        cursor: pointer;
+      }
+
+      .nav:first-child{
+        margin-right: 10px;
+      }
+      .nav:last-child{
+        margin-left: 10px;
+      }
+
+      .card-div{
+        background-color:#29773E;
+        width: 100vh;
+        height: 40vh;
+        border: 1px solid gray;
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        
+        overscroll-behavior: contain;
+
+  /* hide scroll bar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  /* momentum scroll on iOS */
+  -webkit-overflow-scrolling: touch;
+
+  /* disbable vertical scroll for touch */
+  /*touch-action: pan-x;*/
+
+  /* scroll snapping */
+  scroll-snap-type: x mandatory;
+      }
+
+  .card-div::-webkit-scrollbar {
+  display: none;
+  }
+
+      .card{
+        width: 100%;
+        margin: 2px;
+        flex-shrink: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+      }
+
+      .quote{
+        text-align: center;
+        color: #000;
+        width: 100%;
+      }
+
+      .heading{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: rgb(180, 170, 170);
+      }
+
+      .heading h1{
+        margin-bottom: 50px;
+      }
+
+     .results-button{
+
+       width: 10em;
+       height: 3em;
+       border-radius: 5px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+
+     .results-button:hover{
+       
+        cursor: pointer;
+
+     }
+
+     .results{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+     }
+
+     .authors{
+       width: 100%;
+       display: flex;
+       justify-content: space-evenly;
+       align-items: center;
+       flex-wrap: wrap;
+     }
+
+    </style>
+  </head>
+  <body>
+    <div class="heading">
+      <h1>Breaking Bad Trivia Game</h1>
+      <p class="index">1/5</p>
+  </div>
+
+    <div class="header">
+
+    <span id="left" class="nav material-icons" style="font-size: 3em;color: rgb(180, 170, 170);">arrow_back_ios</span>
+
+    <div class="card-div">
+      
+    </div>
+
+    <span id="right" class="nav material-icons" style="font-size: 3em;color: rgb(180, 170, 170);"> arrow_forward_ios </span>
+
+    </div>
+
+    <div class="heading">
+      <div class="results-button">
+        Check Answers
+      </div>
+
+      <div class="results">
+
+      </div>
+    </div>
+    
+
+
+
+
+    <script src="../project2/task3.js"></script>
+  </body>
+</html>
